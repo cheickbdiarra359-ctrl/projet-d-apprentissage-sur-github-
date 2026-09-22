@@ -1,0 +1,21 @@
+# Quiz en Python
+
+questions = [
+    {"question": "Quelle est la capitale du Mali ?", "reponse": "bamako"},
+    {"question": "Combien font 5 + 7 ?", "reponse": "12"},
+    {"question": "Quel langage utilises-tu en ce moment ?", "reponse": "python"},
+]
+
+score = 0
+
+print("=== QUIZ ===")
+
+for q in questions:
+    reponse_utilisateur = input(q["question"] + " ")
+    if reponse_utilisateur.lower().strip() == q["reponse"]:
+        print("Correct !")
+        score += 1
+    else:
+        print(f"Faux. La bonne réponse était : {q['reponse']}")
+
+print(f"\nTon score final : {score}/{len(questions)}")
