@@ -1,0 +1,30 @@
+# Convertisseur FCFA <-> Euro
+# Taux fixe (1 Euro = 655.957 FCFA, taux officiel zone UEMOA)
+
+TAUX = 655.957
+
+def fcfa_vers_euro(montant_fcfa):
+    return montant_fcfa / TAUX
+
+def euro_vers_fcfa(montant_euro):
+    return montant_euro * TAUX
+
+def main():
+    print("=== Convertisseur FCFA <-> Euro ===")
+    print("1. FCFA vers Euro")
+    print("2. Euro vers FCFA")
+    
+    choix = input("Choisis une option (1 ou 2) : ")
+    
+    if choix == "1":
+        montant = float(input("Montant en FCFA : "))
+        resultat = fcfa_vers_euro(montant)
+        print(f"{montant} FCFA = {resultat:.2f} Euros")
+    elif choix == "2":
+        montant = float(input("Montant en Euros : "))
+        resultat = euro_vers_fcfa(montant)
+        print(f"{montant} Euros = {resultat:.2f} FCFA")
+    else:
+        print("Choix invalide")
+
+main()
